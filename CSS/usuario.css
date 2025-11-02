@@ -1,0 +1,126 @@
+* {
+    --fondo: #e7ffe8;
+    --items-color1: #c7f7d0;
+    --items-color2: #aceaa8;
+    --items-color3: #94c791;
+    --items-color4: #88a986;
+    --items-color5: #76ad7b;
+    --items-color6: #70cc78;
+    --shadows: rgb(129, 129, 129);
+    user-select: none;
+    font-family: 'Trebuchet MS';
+}
+
+body {
+    background-color: #5d9a62;
+    display: flex; 
+    flex-wrap: wrap; 
+    margin: 0;
+}
+
+#contenido {
+    max-height: 80dvh;
+    overflow-y: auto;
+    background: var(--fondo); 
+    flex: 1;
+    margin: 20px;
+    border-radius: 15px;
+}
+
+#menu {
+    background-color: var(--items-color1); 
+    width: 30%;
+    margin: 20px;
+    height: 80dvh;
+    border-radius: 15px;
+}
+
+#puntos {
+    background: var(--items-color2); 
+    height: 100px;
+    width: 32%;
+    margin: 20px;
+    border-radius: 15px;
+}
+
+#puntos1 {
+    background: var(--items-color3); 
+    height: 100px;
+    width: 70%;
+    margin: 20px;
+    border-radius: 15px;
+}
+
+#contenedor {
+    width: 100dvw; height: 100dvh;
+    display: flex; 
+    flex-direction: column;
+}
+
+#datos {
+    display: flex;
+    flex: 1;
+}
+
+#datos-num {
+    display: flex;
+    justify-content: space-between;
+}
+
+h2, h3, img {
+    margin: 20px;
+}
+
+p {
+    margin: 10px 40px;
+}
+
+#tu-img {
+    width: 200px;
+    height: 200px;
+}
+
+.comentario {
+    background-color: var(--items-color1);
+    margin: 20px;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+#contenido h3, #contenido img {
+    margin: 2px 10px;
+}
+
+#otro-img {
+    width: 40px;
+    height: 40px;
+}
+
+#acciones {
+    width: 10%;
+    background-color: var(--items-color4);
+    margin: 20px;
+    height: 80dvh;
+    border-radius: 15px;
+}
+
+#acciones a {
+    background-color: var(--fondo);
+    margin: 20px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: black;
+    transition: background-color 0.3s;
+}
+
+#acciones a:hover {
+    background-color: var(--items-color5);
+}
+
+#links {
+    text-align: center;
+    justify-content: space-around;
+    display: flex;
+    flex-wrap: wrap;
+}

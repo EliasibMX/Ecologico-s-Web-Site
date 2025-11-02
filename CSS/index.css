@@ -1,0 +1,111 @@
+* {
+    --fondo: #e7ffe8;
+    --items-color1: #c7f7d0;
+    --items-color2: #aceaa8;
+    --items-color3: #94c791;
+    --items-color4: #88a986;
+    --items-color5: #76ad7b;
+    --items-color6: #70cc78;
+    --shadows: rgb(129, 129, 129);
+    user-select: none;
+    font-family: 'Trebuchet MS';
+}
+
+body {
+    text-align: center;
+    margin: 0;
+    background-color: var(--fondo);
+    overflow-x: hidden;
+}
+
+nav {
+    justify-self: center;
+    width: 90dvw;
+    margin: 50px;
+    display: flex;
+    background-color: var(--items-color3);
+    justify-content: space-around;
+    position: sticky;
+    top: 0;
+    border-radius: 35px;
+    transition: background-color 0.3s, width 0.3s, margin 0.3s, border-radius 0.3s;
+}
+
+nav.scrolled {
+    background-color: var(--items-color5);
+    width: 100dvw;
+    margin: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+h1 {
+    margin: 10px;
+    font-size: 40px;
+    font-family: Verdana;
+}
+
+#paginas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.pagina {
+    text-align: center;
+    width: 500px;
+    min-width: 250px;
+    height: 500px;
+    margin: 5dvw;
+    background-color: var(--items-color1);
+    padding: 5px;
+    border-radius: 30px;
+    box-shadow: 0 0 10px 1px var(--shadows);
+    transition: background-color 0.3s, padding 0.3s;
+}
+
+.pagina:hover {
+    padding: 10px;
+    background-color: var(--items-color3);
+}
+
+.pagina img {
+    width: 250px;
+    height: 250px;
+}
+
+.pagina a {
+    padding: 10px 15px;
+    border-radius: 10px;
+    background-color: var(--items-color4);
+    color: aliceblue;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.pagina:hover a {
+    background-color: var(--items-color5);
+}
+
+.pagina p {
+    margin: 20px;
+}
+
+.material-symbols-outlined {
+    font-size: 300px;
+}
+
+#miembros {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.miembro {
+    min-width: 250px;
+    margin: 5dvw;
+    width: 20%;
+    background-color: #94c791;
+    padding: 20px;
+    border-radius: 10px;
+}
