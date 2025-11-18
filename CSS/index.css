@@ -109,3 +109,17 @@ h1 {
     padding: 20px;
     border-radius: 10px;
 }
+
+.miembro a {
+    padding: 10px 15px;
+    border-radius: 10px;
+    background-color: var(--items-color4);
+    color: aliceblue;
+    text-decoration: none;
+    transition: background-color 0.3s, padding 0.3s;
+}
+
+.miembro a:hover {
+    background-color: var(--items-color5);
+    padding: 15px 20px;
+}

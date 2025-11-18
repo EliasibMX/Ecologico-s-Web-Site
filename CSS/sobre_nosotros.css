@@ -32,8 +32,34 @@ h2 {
 
 .info {
     background-color: var(--items-color2);
-    margin: 40px;
+    margin: 20px;
     width: 300px;
     padding: 20px;
     border-radius: 15px;
+}
+
+.info_unic {
+    justify-self: center;
+    background-color: var(--items-color3);
+    margin: 20px;
+    width: 300px;
+    padding: 20px;
+    border-radius: 50px;
+}
+
+footer {
+    margin: 100px;
+}
+
+footer a {
+    background-color: var(--items-color3);
+    padding: 10px 15px;
+    color: aliceblue;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+a:hover {
+    background-color: var(--items-color5);
 }

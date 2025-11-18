@@ -18,38 +18,6 @@ body {
     margin: 0;
 }
 
-#contenido {
-    max-height: 80dvh;
-    overflow-y: auto;
-    background: var(--fondo); 
-    flex: 1;
-    margin: 20px;
-    border-radius: 15px;
-}
-
-#menu {
-    background-color: var(--items-color1); 
-    width: 30%;
-    margin: 20px;
-    height: 80dvh;
-    border-radius: 15px;
-}
-
-#puntos {
-    background: var(--items-color2); 
-    height: 100px;
-    width: 32%;
-    margin: 20px;
-    border-radius: 15px;
-}
-
-#puntos1 {
-    background: var(--items-color3); 
-    height: 100px;
-    width: 70%;
-    margin: 20px;
-    border-radius: 15px;
-}
 
 #contenedor {
     width: 100dvw; height: 100dvh;
@@ -59,16 +27,66 @@ body {
 
 #datos {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     flex: 1;
 }
 
 #datos-num {
+    width: 100dvw;
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#contenido {
+    max-width: 800px;
+    width: 570px;
+    min-width: 300px;
+    max-height: 650px;
+    overflow-y: auto;
+    background: var(--fondo); 
+    flex: 1;
+    margin: 20px;
+    border-radius: 15px;
+}
+
+#menu {
+    background-color: var(--items-color1); 
+    max-width: 800px;
+    width: 570px;
+    min-width: 300px;
+    margin: 20px;
+    max-height: 650px;
+    border-radius: 15px;
+}
+
+#puntos {
+    background: var(--items-color2); 
+    height: 100px;
+    max-width: 800px;
+    width: 570px;
+    min-width: 300px;
+    margin: 20px;
+    border-radius: 15px;
+}
+
+#puntos1 {
+    background: var(--items-color3); 
+    height: 100px;
+    max-width: 800px;
+    width: 570px;
+    min-width: 300px;
+    margin: 20px;
+    border-radius: 15px;
 }
 
 h2, h3, img {
     margin: 20px;
+}
+
+h4 {
+    font-size: 40px;
 }
 
 p {
@@ -97,19 +115,23 @@ p {
 }
 
 #acciones {
-    width: 10%;
+    max-width: 600px;
+    width: 350px;
+    min-width: 300px;
     background-color: var(--items-color4);
     margin: 20px;
-    height: 80dvh;
+    height: 650px;
     border-radius: 15px;
 }
 
 #acciones a {
+    width: 100%;
     background-color: var(--fondo);
     margin: 20px;
     padding: 5px 10px;
     border-radius: 10px;
     text-decoration: none;
+    font-size: 25px;
     color: black;
     transition: background-color 0.3s;
 }
