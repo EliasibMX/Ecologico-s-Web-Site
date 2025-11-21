@@ -13,6 +13,7 @@
             <h1>Ecologico's</h1>
         </div>
     </nav>
+    <button id="login">Registrarce / Iniciar Sesion</button>
     <div id="paginas">
         <div class="pagina">
             <span class="material-symbols-outlined">download</span>
@@ -24,7 +25,7 @@
             <span class="material-symbols-outlined">account_box</span>
             <h2>Perfil</h2>
             <p>Aqui podras ver tu perfil de usuario, ademas de comentarios de otras personas y tus recompensas.</p>
-            <a href="HTML/usuario.html">Visitar Pagina</a>
+            <a href="HTML/usuario.html" id="perfil">Visitar Pagina</a>
         </div>
         <div class="pagina">
             <span class="material-symbols-outlined">feedback</span>
@@ -63,7 +64,7 @@
                 <h3>Rubio</h3>
                 <h3>Documento/Bitacora</h3>
                 <p>Encargado de Documentar todo el Proyecto, así como su Teoría y Objetivos, también de Llenar una Bitácora con todo Nuestro Progreso</p>
-                <a href="mailto:abdielantonio.saucedo.gonzalez2326@cbtis270.edu.mx">Contacto</a>
+                <a href="mailto:abdielantonio.saucedo.gonzales2326@cbtis270.edu.mx">Contacto</a>
             </div>
         </div>
         <h2>Nahual Code</h2>
@@ -78,6 +79,21 @@
         nav.classList.remove('scrolled');
       }
     });
+
+    let acceso = false;
+
+    document.getElementById('login').addEventListener('click', () => {
+        acceso = true;
+        alert("Inicio de Sesion Exitoso")
+    });
+
+    document.getElementById('perfil').addEventListener('click', (event) => {
+        if (!acceso) {
+            event.preventDefault(); // Bloquea el acceso
+            alert("Debes iniciar sesion primero.");
+        }
+    })
+
   </script>
 </body>
 </html>
