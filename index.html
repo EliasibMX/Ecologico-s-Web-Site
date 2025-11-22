@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <link rel="stylesheet" href="CSS/index.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <title>Ecologico's</title>
 </head>
 <body>
@@ -41,6 +42,13 @@
         </div>
     </div>
     <footer>
+        <div class="swiper">
+            <div class="swiper-wrapper">
+            <div class="swiper-slide">Evento Especial: Bombardeen Perú</div>
+            <div class="swiper-slide">Anuncio: No faltes al cumple de Carlitos, va a ir Spider-Man</div>
+            <div class="swiper-slide">Promoción: Electrolit a solo 48,000.00MXN</div>
+            </div>
+        </div>
         <div id="miembros">
             <div class="miembro">
                 <img src="" >
@@ -70,6 +78,8 @@
         <h2>Nahual Code</h2>
     </footer>
     <!-- JavaScript -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    
      <script>
     const nav = document.getElementById('nav');
     window.addEventListener('scroll', () => {
@@ -93,6 +103,11 @@
             alert("Debes iniciar sesion primero.");
         }
     })
+
+    new Swiper('.swiper', {
+        autoplay: { delay: 6000 },
+        loop: true
+    });
 
   </script>
 </body>
