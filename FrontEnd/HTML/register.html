@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/register.css">
+    <title>Registro de Usuario</title>
+</head>
+
+<body>
+
+<div class="registro-container">
+    <h2>Crear Cuenta</h2>
+
+    <input type="text" id="Usuario" placeholder="Nombre de Usuario" required>
+    <input type="email" id="Email" placeholder="Correo electrónico" required>
+    <input type="password" id="Contrasena" placeholder="Contraseña" required>
+
+    <button onclick="registrar()">Registrarse</button>
+    <a href="login.html">Ya tienes una cuenta? Inicia Sesion</a>
+
+    <p id="Mensaje"></p>
+</div>
+
+<script>
+async function registrar() {
+    const Usuario = document.getElementById("Usuario").value;
+    const Email = document.getElementById("Email").value;
+    const Contrasena = document.getElementById("Contrasena").value;
+    const mensaje = document.getElementById("Mensaje");
+
+    mensaje.textContent = "";
+    mensaje.className = "";
+
+    if (!Usuario || !Email || !Contrasena) {
+        mensaje.textContent = "Completa todos los campos para poder registrarte.";
+        mensaje.className = "error";
+        return;
+    }
+
+    const respuesta = await fetch("/api/registro", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ Usuario, Email, Contrasena })
+    });
+
+    const datos = await respuesta.json();
+
+    if (datos.error) {
+        mensaje.textContent = datos.error;
+        mensaje.className = "error";
+    } else {
+        mensaje.textContent = "Cuenta creada correctamente. ¡Redirigiendo!";
+        mensaje.className = "exito";
+
+        // Espera 1.5 segundos para mandar a la pagina del Login 
+        setTimeout(() => {
+            window.location.href = "login.html";
+        }, 1500);
+    }
+}
+</script>
+
+</body>
+</html>

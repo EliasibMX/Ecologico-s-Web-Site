@@ -9,23 +9,24 @@
 <body>
   <div id="contenedor">
     <div id="datos-num">
-        <div id="puntos">
+        <div id="reputacion">
             <h2>Reputacion</h2>
             <p>25/100</p>
         </div>
         <div>
             <h4>Perfil de Usuario</h4>
         </div>
-        <div id="puntos1">
+        <div id="puntos">
             <h2>JulioCoins</h2>
-            <p>-48,000.00</p>
+            <p id="puntos_User"></p>
         </div>
     </div>
     <div id="datos">
       <div id="menu">
         <h2>Usuario:</h2>
         <img src="../Imagenes/Logo_Pumas_de_la_UNAM.png" id="tu-img">
-        <h3>Julio Cesar "El Conquistador"</h3>
+        <h3 id="nombre_User"></h3>
+        <h3 id="correo_User"></h3>
       </div>
       <div id="contenido">
         <h2>Comentarios</h2>
@@ -46,5 +47,24 @@
       </div>
     </div>
   </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+
+    // Verifica si el usuario está logueado
+    const id = localStorage.getItem("id_User");
+    const nombre = localStorage.getItem("nombre_User");
+    const puntos = localStorage.getItem("puntos_User");
+
+    if (!id) {
+        // Si no hay sesión, lo mando al login
+        window.location.href = "login.html";
+        return;
+    }
+
+    // Mostrar los datos en pantalla
+    document.getElementById("nombre_User").textContent = nombre;
+    document.getElementById("puntos_User").textContent = puntos;
+});
+  </script>
 </body>
 </html>

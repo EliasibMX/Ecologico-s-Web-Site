@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/login.css">
+    <title>Iniciar Sesión</title>
+</head>
+
+<body>
+<div class="login-container">
+    <h2>Iniciar Sesión</h2>
+    <input type="email" id="Email" placeholder="Correo" required>
+    <input type="password" id="Contrasena" placeholder="Contraseña" required>
+    <button onclick="iniciarSesion()">Entrar</button>
+    <a href="register.html">Nuevo en la pagina? Registrate</a>
+    <p class="error" id="error"></p>
+</div>
+
+<script>
+async function iniciarSesion() {
+    const Email = document.getElementById("Email").value;
+    const Contrasena = document.getElementById("Contrasena").value;
+    const error = document.getElementById("error");
+
+    error.textContent = ""; // Vacia el texto para el error
+
+    const respuesta = await fetch("/api/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ Email, Contrasena })
+    });
+
+    const datos = await respuesta.json();
+
+    if (datos.error) {
+        error.textContent = datos.error;
+    } else {
+        // Guardar el ID para despues mostrarlo en la pagina del Perfil de Usuario
+        localStorage.setItem("id_User", datos.Id);
+        localStorage.setItem("nombre_User", datos.Usuario);
+        localStorage.setItem("puntos_User", datos.Puntos);
+        localStorage.setItem("correo_User", datos.Email);
+
+        // Redirigir al perfil
+        window.location.href = "usuario.html";
+    }
+}
+</script>
+
+</body>
+</html>

@@ -61,7 +61,7 @@ body {
     border-radius: 15px;
 }
 
-#puntos {
+#reputacion {
     background: var(--items-color2); 
     height: 100px;
     max-width: 800px;
@@ -71,7 +71,7 @@ body {
     border-radius: 15px;
 }
 
-#puntos1 {
+#puntos {
     background: var(--items-color3); 
     height: 100px;
     max-width: 800px;
